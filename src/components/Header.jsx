@@ -49,16 +49,16 @@ const HeaderStyled = styled.header`
 // con '&' si identifica lo styled component , in questo caso 'HEADER'
 export default function Header() {
   return (
-    <HeaderStyled>
-      <img src={logo} alt="A canvas" />
-      <h1>ReactArt</h1>
+    <header className='flex flex-col items-center mt-8 mb-16'>
+      <img src={logo} alt="A canvas" className='mb-8 w-44 h-44 object-contain'/>
+      <h1 className='font-title text-4xl font-semibold tracking-widest text-center uppercase text-amber-800'>ReactArt</h1>
       <p
       // className={classes.paragraph}
-
+        className='text-stone-500'
       >A community of artists and art-lovers.</p>
 
       {/* la classe paragrapf importata come una stringa contenuta nell'oggetto classes, è applicata solo
       al componente header, da qui deriva la scope del css (CSS MODULES) */}
-    </HeaderStyled>
+    </header>
   );
 }
