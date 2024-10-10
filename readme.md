@@ -16,4 +16,16 @@ Per Installare Tailwind :
  
 Successivamente riavviare il server di sviluppo con il comando : npm run dev
 
+##  Aggiungi i 'paths' nel file `tailwind.config.js` .
+
+    export  default  { content:  [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}", ], 
+					    theme:  { extend:  {fontFamily:{
+											title : ['"Pacifico"', 'cursive']}
+							},
+						 }, 
+					    plugins:  [], }
+
+
+## Successivamente riavviare il server di sviluppo con il comando : npm run dev
+
 <img src="./preview/Screenshot 2024-10-10 185934.png">
