@@ -31,6 +31,22 @@ const Input = styled.input`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
 `
+const Button = styled.button`
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #f0b322;
+  border-radius: 6px;
+  border: none;
+
+  .&:hover {
+    background-color: #f0920e;
+  }
+
+`
+
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
@@ -57,7 +73,7 @@ export default function AuthInputs() {
         <p>
           <Label 
             // className={`label ${emailNotValid ? 'invalid' : ''}`}
-            invalid={emailNotValid}
+            $invalid={emailNotValid}
           >Email</Label>
           <Input
             type="email"
@@ -68,12 +84,12 @@ export default function AuthInputs() {
             // }}
             // className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
-            invalid={emailNotValid}
+            $invalid={emailNotValid}
           />
         </p>
         <p>
           <Label 
-            invalid={passwordNotValid}
+            $invalid={passwordNotValid}
 
             // className={`label ${passwordNotValid ? 'invalid' : ''}`}
             // CON QUESTO APPROCCIO POSSO IMPOSTARE DINAMICAMENTE UNA CLASSE, AVENDONE SEMPRE COMUNQUE UNA DI BASE 'LABEL'
@@ -84,7 +100,7 @@ export default function AuthInputs() {
             //   backgroundColor : passwordNotValid ? '#fed2d2' : '#d2d5db'
             // }}
             // className={passwordNotValid ? 'invalid' : undefined}
-            invalid={passwordNotValid}
+            $invalid={passwordNotValid}
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }
@@ -92,10 +108,16 @@ export default function AuthInputs() {
         </p>
       </ControlContainer>
       <div className="actions">
-        <button type="button" className="text-button">
+        <button 
+          type="button" 
+          className="text-button"
+        >
           Create a new account
         </button>
-        <button className='button' onClick={handleLogin}>Sign In</button>
+        <Button 
+          
+          onClick={handleLogin}
+        >Sign In</Button>
       </div>
     </div>
   );
